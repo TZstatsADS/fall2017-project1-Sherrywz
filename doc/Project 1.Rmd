@@ -377,8 +377,8 @@ json1=createJSON(phi = MovieReviews1$phi,
                    term.frequency = MovieReviews2$term.frequency)
  
  
- serVis(json1, out.dir = 'vis1', open.browser =F)
- serVis(json2, out.dir = 'vis2', open.browser =F)
+ serVis(json1, out.dir = 'vis1', open.browser =F,as.gist = T)
+ serVis(json2, out.dir = 'vis2', open.browser =F, as.gist = T)
  
 ```
 ```
