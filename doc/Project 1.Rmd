@@ -48,11 +48,16 @@ library("RANN")
 library("topicmodels")
 library("LDAvis")
 library(lda)
-source("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/lib/plotstacked.R")
-source("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/lib/speechFuncs.R")
+#source("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/lib/plotstacked.R")
+#source("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/lib/speechFuncs.R")
+source("../lib/plotstacked.R")
+source("../lib/speechFuncs.R")
 print(R.version)
+```
 
-folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data1"
+```{r}
+folder.path="../data/data1"
+#folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data1"
 speeches=list.files(path = folder.path, pattern = "*.txt")
 prex.out=substr(speeches, 6, nchar(speeches)-4)
 ff.doc=Corpus(DirSource(folder.path,encoding="UTF-8"))
@@ -74,7 +79,9 @@ wordcloud (ff.doc, scale=c(3,0.5), max.words=100, min.freq=5, random.order=FALSE
 ```
 
 ```{r}
-folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data2"
+#folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data2"
+folder.path="../data/data2"
+
 speeches=list.files(path = folder.path, pattern = "*.txt")
 prex.out=substr(speeches, 6, nchar(speeches)-4)
 ff.doc=Corpus(DirSource(folder.path,encoding="UTF-8"))
@@ -98,7 +105,8 @@ wordcloud (ff.doc, scale=c(3,0.5), max.words=100, min.freq=5, random.order=FALSE
 
 
 ```{r}
-folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data3"
+#folder.path="/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/data3"
+folder.path="../data/data3"
 speeches=list.files(path = folder.path, pattern = "*.txt")
 prex.out=substr(speeches, 6, nchar(speeches)-4)
 ff.doc=Corpus(DirSource(folder.path,encoding="UTF-8"))
@@ -121,7 +129,8 @@ wordcloud (ff.doc, scale=c(3,0.5), max.words=100, min.freq=5, random.order=FALSE
 
 Sentence length
 ```{r,message=FALSE, warning=FALSE}
-speech.list = read.csv("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/speech.list.csv",header = T,as.is = T)
+#speech.list = read.csv("/Users/Xiaoyu/Documents/GitHub/adsFall2017/project 1/Fall2017-Project1-RNotebook-master/data/speech.list.csv",header = T,as.is = T)
+speech.list = read.csv("../data/speech.list.csv",header = T,as.is = T)
 sentence.list=NULL
 for(i in 1:nrow(speech.list)){
   sentences=sent_detect(speech.list$fulltext[i],
